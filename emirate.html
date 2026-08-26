@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emirates Butchery | Fresh Meat. Quality Cuts.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f8f8;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #e63946;
+        }
+
+        .cart-btn {
+            background: #e63946;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 600px;
+            background:
+                linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+                url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            padding: 15px 28px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .shop-btn {
+            background: #e63946;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        section {
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.08);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #shop {
+            background: white;
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #e63946;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-cart:hover {
+            background: #e63946;
+        }
+
+        .about {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .delivery {
+            background: #111;
+            color: white;
+        }
+
+        .delivery-content {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .delivery-content h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .delivery-content p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .delivery-cards {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .delivery-card {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .delivery-card h3 {
+            color: #e63946;
+            margin: 10px 0;
+        }
+
+        .order-section {
+            background: #f1f1f1;
+        }
+
+        .order-form {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #e63946;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #c1121f;
+        }
+
+        .contact {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: #111;
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            color: #ddd;
+        }
+
+        .contact-info a {
+            color: #25D366;
+        }
+
+        .map {
+            min-height: 300px;
+            background: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #050505;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 27px;
+            color: #e63946;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            margin: 8px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .cart-panel {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 380px;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            box-shadow: -5px 0 20px rgba(0,0,0,.3);
+            padding: 25px;
+            transition: .4s;
+            overflow-y: auto;
+        }
+
+        .cart-panel.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .close-cart {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .checkout-btn {
+            display: block;
+            text-align: center;
+            background: #25D366;
+            color: white;
+            padding: 14px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            text-decoration: none;
+            z-index: 1500;
+        }
+
+        @media(max-width: 900px) {
+            .features,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .delivery-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .features,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .cart-panel {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">
+            Emirates<span> Butchery</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="cart-btn" onclick="openCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </div>
+
+    </nav>
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Fresh Meat.
+            <span>Quality Cuts.</span>
+        </h1>
+
+        <p>
+            Delivered to Your Door.
+        </p>
+
+        <p>
+            Premium quality beef, goat, chicken and more,
+            freshly prepared for you.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#shop" class="shop-btn">
+                Shop Now
+            </a>
+
+            <a href="https://wa.me/254700000000"
+               class="whatsapp-btn"
+               target="_blank">
+                Order via WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Why Choose Emirates Butchery?</h2>
+
+        <p>Quality you can taste and service you can trust.</p>
+
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🥩</div>
+            <h3>Fresh Meat</h3>
+            <p>Freshly sourced and carefully handled meat.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>Premium Quality</h3>
+            <p>Carefully selected cuts prepared to high standards.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Get your order delivered conveniently to your location.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💬</div>
+            <h3>Easy Ordering</h3>
+            <p>Order online or contact us directly through WhatsApp.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="shop">
+
+    <div class="section-title">
+
+        <h2>Our Fresh Cuts</h2>
+
+        <p>
+            Choose your favourite meat and add it to your cart.
+        </p>
+
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1588347818036-558601350947?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Premium Beef</h3>
+
+                <p>Fresh quality beef cuts.</p>
+
+                <div class="price">
+                    KSh 650 / kg
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Premium Beef',650)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Beef Steak</h3>
+
+                <p>Premium steak cuts.</p>
+
+                <div class="price">
+                    KSh 900 / kg
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Beef Steak',900)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Fresh Chicken</h3>
+
+                <p>Fresh quality chicken.</p>
+
+                <div class="price">
+                    KSh 550 / kg
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Fresh Chicken',550)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Goat Meat</h3>
+
+                <p>Fresh and tender goat meat.</p>
+
+                <div class="price">
+                    KSh 800 / kg
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart('Goat Meat',800)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1551028150-64b9f398f678?auto=format&fit=crop&w=1000&q=80">
+
+        <div class="about-text">
+
+            <h2>About Emirates Butchery</h2>
+
+            <p>
+                Emirates Butchery is committed to providing customers
+                with fresh, high-quality meat and excellent customer service.
+            </p>
+
+            <p>
+                We offer carefully selected beef, goat meat, chicken
+                and other quality cuts prepared according to your needs.
+            </p>
+
+            <p>
+                Whether you are preparing a family meal, hosting an event,
+                running a restaurant or simply looking for fresh meat,
+                Emirates Butchery is ready to serve you.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="delivery" class="delivery">
+
+    <div class="delivery-content">
+
+        <h2>Fresh Meat Delivered To You</h2>
+
+        <p>
+            Place your order online and have your fresh meat delivered
+            conveniently to your doorstep.
+        </p>
+
+        <div class="delivery-cards">
+
+            <div class="delivery-card">
+                <div style="font-size:40px;">📦</div>
+                <h3>Place Your Order</h3>
+                <p>Select your preferred meat and quantity.</p>
+            </div>
+
+            <div class="delivery-card">
+                <div style="font-size:40px;">🔪</div>
+                <h3>Freshly Prepared</h3>
+                <p>Your meat is prepared according to your order.</p>
+            </div>
+
+            <div class="delivery-card">
+                <div style="font-size:40px;">🚚</div>
+                <h3>Doorstep Delivery</h3>
+                <p>We deliver your order to your preferred location.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="order-section" id="order">
+
+    <div class="section-title">
+
+        <h2>Place an Order</h2>
+
+        <p>Fill in your details and submit your order.</p>
+
+    </div>
+
+
+    <!-- PHP CONNECTION -->
+    <form
+        class="order-form"
+        action="order.php"
+        method="POST">
+
+        <div class="form-group">
+
+            <label>Customer Name</label>
+
+            <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                placeholder="Enter your name"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="07XXXXXXXX"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Meat Type</label>
+
+            <select
+                id="meatType"
+                name="meatType"
+                required>
+
+                <option value="">
+                    Select Meat
+                </option>
+
+                <option value="Premium Beef">
+                    Premium Beef
+                </option>
+
+                <option value="Beef Steak">
+                    Beef Steak
+                </option>
+
+                <option value="Fresh Chicken">
+                    Fresh Chicken
+                </option>
+
+                <option value="Goat Meat">
+                    Goat Meat
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Quantity (kg)</label>
+
+            <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="1"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Delivery Location</label>
+
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Enter your delivery location"
+                required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Additional Instructions</label>
+
+            <textarea
+                id="instructions"
+                name="instructions"
+                placeholder="E.g. preferred cuts, packaging instructions..."></textarea>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="submit-btn">
+
+            Submit Order
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Emirates Butchery</h2>
+
+        <p>We're ready to serve you.</p>
+
+    </div>
+
+    <div class="contact">
+
+        <div class="contact-info">
+
+            <h3>Get In Touch</h3>
+
+            <p>📍 Location: Nairobi, Kenya</p>
+
+            <p>📞 Phone: 0700 000 000</p>
+
+            <p>
+                💬 WhatsApp:
+                <a href="https://wa.me/254700000000"
+                   target="_blank">
+                    Chat With Us
+                </a>
+            </p>
+
+            <p>
+                📧 Email:
+                info@emiratesbutchery.co.ke
+            </p>
+
+            <p>
+                🕒 Opening Hours:
+                7:00 AM - 9:00 PM
+            </p>
+
+        </div>
+
+        <div class="map">
+            📍 Emirates Butchery Location
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Emirates Butchery
+    </div>
+
+    <p>
+        Fresh Meat. Quality Cuts. Delivered to Your Door.
+    </p>
+
+    <p>
+        © 2026 Emirates Butchery. All Rights Reserved.
+    </p>
+
+    <div class="social-links">
+
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">WhatsApp</a>
+
+    </div>
+
+</footer>
+
+
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <div
+            class="close-cart"
+            onclick="closeCart()">
+            ×
+        </div>
+
+    </div>
+
+
+    <div id="cartItems">
+
+        <p>Your cart is empty.</p>
+
+    </div>
+
+
+    <div class="cart-total">
+
+        Total: KSh
+        <span id="cartTotal">0</span>
+
+    </div>
+
+
+    <a
+        href="https://wa.me/254700000000"
+        target="_blank"
+        class="checkout-btn">
+
+        Order via WhatsApp
+
+    </a>
+
+</div>
+
+
+<a
+    href="https://wa.me/254700000000"
+    target="_blank"
+    class="whatsapp-float">
+
+    💬
+
+</a>
+
+
+<!-- CONNECT JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
