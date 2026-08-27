@@ -836,10 +836,7 @@
 
 
     <!-- PHP CONNECTION -->
-    <form
-        class="order-form"
-        action="order.php"
-        method="POST">
+<form class="order-form" id="orderForm">
 
         <div class="form-group">
 
@@ -967,7 +964,43 @@
         </button>
 
     </form>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxb5YcjWNQ-eqePnM_ci4LyH_iX-EpCChwdKlSdCOqcSGNOJ2k0LlcSTS2mXTCPFXRQ/exec";
 
+document.getElementById("orderForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const orderData = {
+        customerName: document.getElementById("customerName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        location: document.getElementById("location").value,
+        order:
+            document.getElementById("meatType").value +
+            " - " +
+            document.getElementById("quantity").value +
+            " kg",
+        total: "Calculate from order"
+    };
+
+    try {
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(orderData)
+        });
+
+        alert("Order submitted successfully!");
+
+        form.reset();
+
+    } catch (error) {
+        alert("There was a problem submitting your order. Please try again.");
+        console.error(error);
+    }
+});
+</script>
 </section>
 
 
